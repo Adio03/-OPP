@@ -1,2 +1,4 @@
-package bicycle;public class Brakes {
+package bicycle;
+
+public class Brakes extends BrakeSystem {
 }

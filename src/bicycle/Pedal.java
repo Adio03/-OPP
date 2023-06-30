@@ -1,2 +1,4 @@
-package bicycle;public class Pedal {
+package bicycle;
+
+public class Pedal {
 }

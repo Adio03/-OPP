@@ -1,20 +1,18 @@
 package Snacks;
 
-import java.util.Arrays;
-
 public class TwoOccurance {
 
 
-    public boolean checkArray(int [] array, int number) {
-        for (int index = 0; index < array.length; index++) {
-            if(array[index] == number){
-                return true;
+    public int checkArray(int [] array) {
+        int container = 0;
+        for (int index = 0; index < array.length-1; index++) {
+            if ( array[index] == array[index]) {
+//                container = array[index];
+                container++;
             }
-
         }
-
-
-        return false;
+        System.out.println(container);
+        return container;
     }
 }
 

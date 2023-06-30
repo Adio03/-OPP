@@ -1,2 +1,4 @@
-package bicycle;public class BrakeLever {
+package bicycle;
+
+public class BrakeLever {
 }

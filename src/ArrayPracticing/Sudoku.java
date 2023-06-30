@@ -1,2 +1,42 @@
-package ArrayPracticing;public class sudoku {
+package ArrayPracticing;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Sudoku {
+    public static void main(String[] args) {
+
+        System.out.println(Arrays.deepToString((solveSudoku())));
+
+    }
+
+
+    public static int[][] solveSudoku() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter number");
+        int[][] sudoku = new int[9][9];
+        for (int row = 0; row < 9; row++)
+            for (int colum = 0; colum < 9; colum++)
+                sudoku[row][colum] = input.nextInt();
+
+        return sudoku;
+    }
+//    public static boolean isValid(int i, int j, int[][] grid) {
+//
+//        for (int column = 0; column < 9; column++)
+//            if (column != j && grid[i][column] == grid[i][j]) return false;
+//
+//
+//        for (int row = 0; row < 9; row++)
+//            if (row != i && grid[row][j] == grid[i][j])
+//                return false;
+//
+//        for (int row = (i / 3) * 3; row < (i / 3) * 3 + 3; row++)
+//            for (int col = (j / 3) * 3; col < (j / 3) * 3 + 3; col++)
+//                if (row != i && col != j && grid[row][col] == grid[i][j])
+//                    return false;
+//
+//
+//   return true;
+//}
 }

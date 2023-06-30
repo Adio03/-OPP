@@ -1,2 +1,4 @@
-package bicycle;public class Bicycle {
+package bicycle;
+
+public class Bicycle {
 }
