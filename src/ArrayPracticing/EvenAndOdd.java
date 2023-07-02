@@ -16,13 +16,10 @@ public class EvenAndOdd {
         System.out.println("Enter a number : \r" );
         for (int index = 0; index < numberToCheck.length; index++) {
             numberToCheck[index] = userInput.nextInt();
-            if (numberToCheck[index] % 2 == 0) {
+            if (numberToCheck[index] % 2 == 0)
                 index++;
-            }
-            if (numberToCheck[index] != 2) {
+            if (numberToCheck[index] != 2)
                 System.out.println("enter an even number : \r");
-
-            }
         }
 
 

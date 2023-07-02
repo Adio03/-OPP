@@ -11,8 +11,6 @@ public class Account {
         private String accountNumber;
         private String pins;
     private String phoneNumber;
-    private final LocalDateTime timeEachAccountWasCreated = LocalDateTime.now();
-
 
 
 
@@ -23,9 +21,7 @@ public class Account {
         accountNumber = phoneNumber;
         pins = pin;
     }
-    public LocalDateTime getTimeEachAccountWasCreated() {
-        return timeEachAccountWasCreated;
-    }
+
     public void setFirstName(String firstName){
         this.firstName = firstName;
         }
@@ -76,7 +72,7 @@ public class Account {
 
         @Override
         public String toString(){
-            return "Account{\n"+"firstName: "+ firstName +"\nbalance:"+balance +"\n accountNumber:"+accountNumber+"}";
+            return "\nAccount Details:  \nfirstName: " + firstName + "\n last Name: " + lastName + "\naccountNumber:"+accountNumber;
         }
 
 
