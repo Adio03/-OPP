@@ -53,8 +53,8 @@ public class Petrol {
     }
 
     public void setDiscount(double discount) {
-         double discounts = 0.05;
-        discounts = this.discount = discount;
+          discount = 0.05;
+        this.discount = discount;
     }
     public double getDiscount() {
         return discount;

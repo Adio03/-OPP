@@ -8,9 +8,9 @@ class TwoOccuranceTest {
     TwoOccurance twoOccurance = new TwoOccurance();
     @Test
     public void checkIfElement(){
-        int [] arr = {2,3,4,5,6,7,8,9,};
-     boolean result = twoOccurance.checkArray(arr,2);
-        assertTrue(result);
+        int [] arr = {2,3,2,2,2,4,5,6,7,8,9,};
+     int result = twoOccurance.checkArray(arr);
+        assertEquals( 4,result);
 
     }
 

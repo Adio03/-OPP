@@ -1,2 +1,4 @@
-package bicycle;public class HandleBar {
+package bicycle;
+
+public class HandleBar {
 }

@@ -14,7 +14,7 @@ public class ArraySorting {
                 temporaryHolder= array[index];
                 array[index] = array[index+1];
                 array[index+1] = temporaryHolder;
-                index = -1;
+
             }
         }
         return array;

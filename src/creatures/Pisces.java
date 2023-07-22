@@ -1,4 +1,4 @@
 package creatures;
 
-public class Pisces {
+public class Pisces extends Vertebrates {
 }

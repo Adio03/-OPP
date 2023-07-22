@@ -1,2 +1,4 @@
-package bicycle;public class Wheel {
+package bicycle;
+
+public class Wheel extends DriveSystem {
 }

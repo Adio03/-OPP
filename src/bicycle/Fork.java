@@ -1,2 +1,4 @@
-package bicycle;public class Fork {
+package bicycle;
+
+public class Fork extends SteerSystem{
 }

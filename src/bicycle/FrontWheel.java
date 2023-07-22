@@ -1,2 +1,4 @@
-package bicycle;public class FrontWheel {
+package bicycle;
+
+public class FrontWheel extends Wheel {
 }

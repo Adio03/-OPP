@@ -1,4 +1,4 @@
 package creatures;
 
-public class Plants {
+public class Plants  {
 }
