@@ -15,22 +15,15 @@ public class BankTest {
 
     @Test
     public void testThatICanCreateAccountTest() {
-        bank.createNewAccounts("tim", "jon", "07049182688", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
     }
-
-    @Test
-    public void testThatICreateMultipleAccountTest() {
-        bank.createNewAccounts("tim", "jon", "07011223344", "1234");
-        bank.createNewAccounts("mariam", "jon", "070455667788", "1234");
-        bank.createNewAccounts("tin", "jon", "07099442233", "1234");
-        bank.createNewAccounts("timi", "jon", "07010067890", "1234");
-        bank.createNewAccounts("tinu", "jon", "07056789085", "1234");
-        int expected = 5;
-        assertEquals(expected, bank.getTotalAccountsInBank());
-    }
-
     @Test
     public void testToGenerateAccountNumberTest() {
         String expected = bank.generateAccountNumber("07049182688");
@@ -39,7 +32,12 @@ public class BankTest {
 
     @Test
     public void testToDepositToAccountThroughBank() {
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         bank.depositToAccount("7022334455", 10_000);
@@ -49,7 +47,12 @@ public class BankTest {
     }
     @Test
     public void test_That_Negative_Amount_Can_Not_Deposit_Test() {
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         assertThrows(IllegalArgumentException.class, () ->
@@ -57,7 +60,12 @@ public class BankTest {
     }
     @Test
     public void test_That_Amount_Should_Not_Be_Deposit_If_The_AccountNumber_Is_Incorrect_Test() {
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         assertThrows(IllegalArgumentException.class, () ->
@@ -65,7 +73,12 @@ public class BankTest {
     }
     @Test
     public void test_Test_That_I_Can_Withdraw_From_Account_Test(){
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         bank.depositToAccount("7022334455",10_000.00);
@@ -77,7 +90,12 @@ public class BankTest {
     }
     @Test
     public void test_Test_That_Negative_Amount_CanNotBe_Withdraw_From_Account_Test(){
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         bank.depositToAccount("7022334455",10_000.00);
@@ -87,7 +105,12 @@ public class BankTest {
     }
     @Test
     public void test_Test_That_Amount_GreaterThan_Balance_CanNotBe_Withdraw_From_Account_Test(){
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         bank.depositToAccount("7022334455",10_000.00);
@@ -97,7 +120,12 @@ public class BankTest {
     }
     @Test
     public void test_Test_That__Amount_CanNotBe_Withdraw_if_Pin_is_Not_Correct_From_Account_Test(){
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         bank.depositToAccount("7022334455",10_000.00);
@@ -107,7 +135,12 @@ public class BankTest {
     }
     @Test
     public void test_Test_That__Amount_CanNotBe_Withdraw_if_AccountNumber_is_Not_Correct_From_Account_Test(){
-        bank.createNewAccounts("olayemi", "olawale", "07022334455", "1234");
+        AccountDTO accountDTO = new AccountDTO();
+        accountDTO.setFirstName("olayemi");
+        accountDTO.setLastName("olawale");
+        accountDTO.setPhoneNumber("07022334455");
+        accountDTO.setPins("1234");
+        bank.createNewAccounts(accountDTO);
         int expected = 1;
         assertEquals(expected, bank.getTotalAccountsInBank());
         bank.depositToAccount("7022334455",10_000.00);

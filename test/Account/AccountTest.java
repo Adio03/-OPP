@@ -24,9 +24,9 @@ import static org.junit.jupiter.api.Assertions.*;
         }
         @Test
         public void testToAddPhoneNumberTest(){
-            account.addPhoneNumber("07049182688");
+            account.setPhoneNumber("07049182688");
             String expected = "07049182688";
-            assertEquals(expected,account.checkPhoneNumber());
+            assertEquals(expected,account.getPhoneNumber());
         }
         @Test
         public void testToConfirmAccountNumber(){

@@ -1,8 +1,9 @@
 package Account;
 
 
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Account {
         private String firstName;
@@ -13,30 +14,44 @@ public class Account {
     private String phoneNumber;
 
 
+//    public Account(String firstName,String lastName,String phoneNumber,String pin) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.phoneNumber = phoneNumber;
+//        this.pins = pin;
+//    }
 
-    public Account(String firstName,String lastName,String phoneNumber,String pin){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        accountNumber = phoneNumber;
-        pins = pin;
+    public Account() {
+
     }
 
-    public void setFirstName(String firstName){
-        this.firstName = firstName;
-        }
+    public void setFirstName(String firstName){this.firstName = firstName;}
         public String getFirstName(){
         return firstName;
         }
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getLastName() {
         return lastName;
     }
    public void setPin(String pin) {
+        if(pin.length() != 4 && pinValidation(pin))
+            throw new IllegalArgumentException("invalid pin !!!");
         pins = pin;
+    }
+    private boolean pinValidation(String pin){
+        Pattern pinPattern = Pattern.compile("[a-zA-z]");
+        Matcher pinMatcher = pinPattern.matcher(pin);
+        return !pinMatcher.find();
+    }
+    private boolean validateAccountNumber(String accountNumber){
+        Pattern accountNumberPattern = Pattern.compile("[a-zA-z]");
+        Matcher accountNumberMatcher =accountNumberPattern.matcher(accountNumber);
+        return !accountNumberMatcher.find();
+    }
+    private boolean validateAccountNumberLength(String accountNumber) {
+        return accountNumber.length() == 10;
     }
     public String confirmPin() {
         return pins;
@@ -55,22 +70,34 @@ public class Account {
                 throw new IllegalArgumentException("invalid pin");
                 else return balance;
         }
-    public void setAccountNumber(String phoneNumber){
+    public void setAccountNumber(String phoneNumber){;
+//        if (phoneNumber.length() != 10 || validateAccountNumber(phoneNumber))
+//            throw new IllegalArgumentException("invalid account number");
         this.accountNumber = phoneNumber;
     }
     public String getAccountNumber() {
         return  accountNumber;
     }
-    public void addPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;}
 
-    public String checkPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;}
 
 
+//    @Override
+//    public String toString() {
+//        return "Account{" +
+//                "firstName='" + firstName + '\'' +
+//                ", lastName='" + lastName + '\'' +
+//                ", balance=" + balance +
+//                ", accountNumber='" + accountNumber + '\'' +
+////                ", pins='" + pins + '\'' +
+//                ", phoneNumber='" + phoneNumber + '\'' +
+//                '}';
+//    }
 
-
-        @Override
+    @Override
         public String toString(){
             return "\nAccount Details:  \nfirstName: " + firstName + "\n last Name: " + lastName + "\naccountNumber:"+accountNumber;
         }

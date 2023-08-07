@@ -1,2 +1,5 @@
-package AirCondition;public class parameter {
+package AirCondition;
+
+public class parameter {
+
 }

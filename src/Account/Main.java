@@ -8,6 +8,7 @@ import javax.swing.*;
 public class Main {
 
     private static final Bank bank = new Bank();
+    private static final AccountDTO accountDTO = new AccountDTO();
 
     public static void main(String[] args) {
         try {
@@ -65,18 +66,22 @@ public class Main {
         display("Thanks for Banking With us");
     }
     private static void registerAccount() {
+
         try {
             String firstName = input("Enter firstname: ");
             String lastName = input("Enter lastName: ");
             String phoneNumber = input("Enter PhoneNumber");
             String pin = input("Enter your desire Pin");
-            bank.createNewAccounts(firstName, lastName, phoneNumber, pin);
+            accountDTO.setFirstName(firstName);
+            accountDTO.setLastName(lastName);
+            accountDTO.setPhoneNumber(phoneNumber);
+            accountDTO.setPins(pin);
+            bank.createNewAccounts(accountDTO);
             display(" <<< Account create Successfully >>> ");
             display( "This is your account details: \n" + displayAccountCreated(firstName,lastName,phoneNumber));
-
         } catch (IllegalArgumentException wrongInput) {
             display(wrongInput.getMessage());
-            bankServices();
+            registerAccount();
         }
 
         String userInput = input("""
@@ -166,7 +171,7 @@ public class Main {
         proceedToOtherServices();
     }
     private static  String displayAccountCreated(String firstName, String lastName, String phoneNumber){
-        return display(" First name: " + firstName.toUpperCase()) +
+        return display("First name: " + firstName.toUpperCase()) +
         display("\nLast name: " + lastName.toUpperCase()) +
         display("\nAccount number: " + bank.generateAccountNumber(phoneNumber)) +
         display("\n Time Created: " + Clock.clockShow());

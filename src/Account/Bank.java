@@ -10,10 +10,14 @@ import java.util.Objects;
     private final List<Account> accounts = new ArrayList<>();
 
 
-    public void createNewAccounts(String firstName, String lastName, String phoneNumber,String pin) {
-        String accountNumber = generateAccountNumber(phoneNumber);
-        Account account = new Account(firstName, lastName, phoneNumber, pin);
+    public void createNewAccounts(AccountDTO create) {
+        Account account = new Account();
+        account.setFirstName(create.getFirstName());
+        account.setLastName(create.getLastName());
+        account.setPhoneNumber(create.getPhoneNumber());
+        String accountNumber = generateAccountNumber(create.getPhoneNumber());
         account.setAccountNumber(accountNumber);
+        account.setPin(create.getPins());
         accounts.add(account);
 
     }
@@ -31,8 +35,9 @@ import java.util.Objects;
         if (!isAccountFound) throw new IllegalArgumentException("the account does not exist");
         return findAccountNumber;
     }
-    public String generateAccountNumber(String accountNumbers) {
-        return accountNumbers.startsWith("0") ? accountNumbers.substring(1) : accountNumbers;
+    public String generateAccountNumber(String phoneNumber) {
+        return phoneNumber.startsWith("0") ?
+                phoneNumber.substring(1) : phoneNumber;
     }
     public void depositToAccount( String accountNumber, double amount) {
         boolean isAccountNumberCorrect = false;
